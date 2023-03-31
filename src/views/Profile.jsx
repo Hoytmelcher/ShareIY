@@ -13,7 +13,7 @@ export default function Profile() {
     return (
         <div>
             <div>
-                <h1>GGGGG</h1>
+                <h1></h1>
             </div>
             <h1>{user.displayName}</h1>
             {/* Map through the filteredPosts array to render only relevant posts */}

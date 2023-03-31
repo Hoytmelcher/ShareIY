@@ -13,15 +13,15 @@ export default function PostCategory() {
     useEffect(() => {
         async function handleLoad() {
             try {
-                const data = await getPosts()
-                const filteredPosts = data.filter(post => post.category === category)
+                const data = await getPosts(category)
+                const filteredPosts = data.filter(post => post.category == category)
                 setPosts(filteredPosts)
             } catch(err) {
                 setError(true)
             }
         }
         handleLoad()
-    }, [category])
+    }, [])
 
     return(
         <div>

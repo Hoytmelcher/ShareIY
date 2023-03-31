@@ -8,6 +8,7 @@ import { DataContext } from "../contexts/DataProvider";
 export default function ImageTest() {
     const [title, setTitle] = useState('')
     const [body, setBody] = useState('')
+    const [category, setCategory] = useState('')
     const [image, setImage] = useState('')
     const { addPost } = useContext(DataContext)
     const {user} = useContext(AuthContext)
@@ -34,9 +35,10 @@ export default function ImageTest() {
     async function handleSubmit(e) {
         e.preventDefault()
         const url = await uploadImage()
-        const newPost = await addPost(title, body, url)
+        const newPost = await addPost(title, body, url, category)
         setTitle('')
         setBody('')
+        setCategory('')
         setImage(uploadImage)
         e.target.reset()
     }
@@ -61,7 +63,14 @@ export default function ImageTest() {
                     value={body}
                 ></textarea>
             </div>
-                <label ></label>
+                <label >Category</label>
+            <div>
+            <input type="text" 
+                name="category" 
+                id="category" 
+                onChange={(e) => setCategory(e.target.value)} 
+                value={category}/>
+            </div>
             <div>
                 <input type="file" onChange={(event) => {setImageUpload(event.target.files[0])}} />
             </div>

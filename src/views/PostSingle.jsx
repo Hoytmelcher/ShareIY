@@ -32,7 +32,8 @@ export default function PostSingle() {
                     <p>Post {id} could not be found</p>
                 </>:
                 <>
-                    <h1>Single</h1>
+                <div><h1></h1></div>
+                    
                     <Post post={post} hideLink={true}/>
                 </>
             }

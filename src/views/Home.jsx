@@ -10,7 +10,7 @@ export default function Home() {
 
     return(
         <div>
-            <div><h1>GGGGG</h1></div>
+            <div><h1></h1></div>
             <h1>Home</h1>
             { posts.map((post) => <Post post={post} key={post.id}/>) }
             

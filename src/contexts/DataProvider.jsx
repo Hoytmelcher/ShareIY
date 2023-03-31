@@ -38,13 +38,14 @@ export const DataProvider = function(props) {
         return  docSnap.data()
     }
 
-    async function addPost(title, body, image) {
+    async function addPost(title, body, image, category) {
         
         const newPost = {
             title,
             body,
             userId: user.uid,
             image,
+            category,
             username: user.displayName,
             dateCreated: Timestamp.now()
         }
