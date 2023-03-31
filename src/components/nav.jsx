@@ -7,8 +7,10 @@ import Home from '../views/Home'
 import Profile from '../views/Profile'
 import PostSingle from '../views/PostSingle'
 import CreatePost from '../views/CreatePost'
+import PostCategory from '../views/PostCategory';
 import { AuthContext } from '../contexts/AuthProvider';
 import { useContext } from 'react';
+import './nav.css'
 
 
 function NavComponent() {
@@ -17,26 +19,26 @@ function NavComponent() {
   
   return (
     <BrowserRouter>
-      <Navbar bg='primary' variant='dark' fixed="top" >
+      <Navbar bg='primary' variant='dark' fixed="top" className="align-items-center" >
         <Container>
           <Navbar.Brand >
-            <Navbar.Text>
+            <Navbar.Text >
               <Link className='btn btn-primary' to="/">ShareYourProject</Link>
             </Navbar.Text>
           </Navbar.Brand>
           {
             (user.loggedIn)?
             <Nav className="me-auto">
-                <Navbar.Text>
+                <Navbar.Text className='my-auto'>
                   <Link className='btn btn-primary' to="/">Home</Link>
                 </Navbar.Text>
-                <Navbar.Text>
+                <Navbar.Text className='my-auto'>
                   <Link className='btn btn-primary' to="/profile">Profile</Link>
                 </Navbar.Text>
-                <Navbar.Text>
+                <Navbar.Text className='my-auto'>
                   <Link className='btn btn-primary' to="/createpost">Create</Link>
                 </Navbar.Text>
-                <NavDropdown className='btn btn-primary' title="Categories" id="basic-nav-dropdown">
+                <NavDropdown className='btn btn-primary my-auto' title="Categories" id="basic-nav-dropdown">
                   <NavDropdown.Item >
                     <Link to="/category/modeling">Modeling</Link> 
                   </NavDropdown.Item>
@@ -45,13 +47,20 @@ function NavComponent() {
                     <Link to="/category/crochet">Crochet</Link>
                   </NavDropdown.Item>
                   <NavDropdown.Divider />
-                  <NavDropdown.Item href="/category/knitting">Knitting</NavDropdown.Item>
-                  <NavDropdown.Item href="/category/woodworking">Woodworking</NavDropdown.Item>
-                  <NavDropdown.Item href="/category/printing">3D Printing</NavDropdown.Item>
-                  <NavDropdown.Item href="/category/cosplay">Cosplay</NavDropdown.Item>
+                  <NavDropdown.Item >
+                    <Link to="/category/knitting">Knitting</Link>
+                    </NavDropdown.Item>
+                    <NavDropdown.Divider />
+                  <NavDropdown.Item >
+                    <Link to="/category/woodworking">Woodworking</Link>
+                  </NavDropdown.Item>
                   <NavDropdown.Divider />
-                  <NavDropdown.Item href="#action/3.7">
-                    Submit Category
+                  <NavDropdown.Item >
+                    <Link to="/category/printing">3D Printing</Link>
+                  </NavDropdown.Item>
+                  <NavDropdown.Divider />
+                  <NavDropdown.Item >
+                    <Link to="/category/cosplay">Cosplay</Link>
                   </NavDropdown.Item>
                 </NavDropdown>
               </Nav>  
@@ -82,6 +91,7 @@ function NavComponent() {
         <Route path='/profile' element={<Profile />}/>
         <Route path='/createpost' element={<CreatePost />}/>
         <Route path='/post/:id' element={<PostSingle />}/>
+        <Route path='/category/:category' element={<PostCategory />}/>
       </Routes>
 
     </BrowserRouter>

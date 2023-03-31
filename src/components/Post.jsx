@@ -7,7 +7,11 @@ export default function Post(props) {
         <div className="post card" >
             <h2>{props.post.title}</h2>
             <img src={props.post.image} alt="" />
-            <p>{props.post.body}</p>
+            {
+                (props.hideLink) ?
+                <p>{props.post.body}</p> :
+                <></>
+            }
             <p>{props.post.dateCreated?.toDate().toString()}</p>
             <p>Posted by: {props.post.username}</p>
             {

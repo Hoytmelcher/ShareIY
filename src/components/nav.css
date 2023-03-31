@@ -1,0 +1,43 @@
+.Navbar {
+    background-color: #007bff;
+    color: #fff;
+    }
+    
+    .Navbar .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: #fff;
+    margin-right: 10px;
+    }
+    
+    .Navbar .btn-primary:hover {
+    background-color: #0062cc;
+    border-color: #0062cc;
+    color: #fff;
+    }
+    
+    .Navbar .NavDropdown {
+    margin-right: 10px;
+    }
+    
+    .Navbar .NavDropdown .dropdown-menu {
+    background-color: #007bff;
+    }
+    
+    .Navbar .NavDropdown .dropdown-item {
+    color: #fff;
+    }
+    
+    .Navbar .NavDropdown .dropdown-item:hover {
+    background-color: #0062cc;
+    }
+    
+    .Navbar .justify-content-end .btn-primary {
+    margin-left: 10px;
+    }
+    
+    .Navbar .justify-content-end .btn-primary:hover {
+    background-color: #0062cc;
+    border-color: #0062cc;
+    color: #fff;
+    }
